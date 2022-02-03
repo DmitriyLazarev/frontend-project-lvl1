@@ -4,7 +4,9 @@ jobs:
   analyse:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repo
+      - name: Checkout
         uses: actions/checkout@v2
+      - name: Run NPM
+        run: npm i
       - name: ESLint check
         run: make lint
