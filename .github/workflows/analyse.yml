@@ -1,0 +1,8 @@
+name: analyse
+on: [push]
+jobs:
+  analyse:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Start ESLint"
+      - run: make lint
