@@ -1,7 +1,7 @@
 import gameBase from '../common/game-base.js';
 import greetingAndIntroduction from '../cli.js';
 import congratulationMessage from '../common/congratulation-message.js';
-import getQuestion from '../common/get-question.js';
+import { getGreatestCommonDivisor } from '../common/get-question.js';
 
 const brainGcdGame = () => {
   const userName = greetingAndIntroduction();
@@ -10,7 +10,7 @@ const brainGcdGame = () => {
   let result = true;
   let i = 0;
   while (result && i < 3) {
-    const questionArray = getQuestion('gcd');
+    const questionArray = getGreatestCommonDivisor();
     const questionString = questionArray[0];
     const questionResult = questionArray[1];
     result = gameBase(userName, questionString, questionResult);

@@ -1,16 +1,16 @@
 import gameBase from '../common/game-base.js';
 import greetingAndIntroduction from '../cli.js';
 import congratulationMessage from '../common/congratulation-message.js';
-import { getCalcOperation } from '../common/get-question.js';
+import { getProgression } from '../common/get-question.js';
 
-const brainCalcGame = () => {
+const brainProgressionGame = () => {
   const userName = greetingAndIntroduction();
-  console.log('What is the result of the expression?');
+  console.log('What number is missing in the progression?');
 
   let result = true;
   let i = 0;
   while (result && i < 3) {
-    const questionArray = getCalcOperation();
+    const questionArray = getProgression();
     const questionString = questionArray[0];
     const questionResult = questionArray[1];
     result = gameBase(userName, questionString, questionResult);
@@ -22,4 +22,4 @@ const brainCalcGame = () => {
   }
 };
 
-export default brainCalcGame;
+export default brainProgressionGame;

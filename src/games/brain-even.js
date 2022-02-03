@@ -1,8 +1,7 @@
 import gameBase from '../common/game-base.js';
 import greetingAndIntroduction from '../cli.js';
 import congratulationMessage from '../common/congratulation-message.js';
-import getQuestion from '../common/get-question.js';
-import checkEvenNumber from '../common/check-even-number.js';
+import { getEvenGameNumber } from '../common/get-question.js';
 
 const brainEvenGame = () => {
   const userName = greetingAndIntroduction();
@@ -11,8 +10,9 @@ const brainEvenGame = () => {
   let result = true;
   let i = 0;
   while (result && i < 3) {
-    const questionString = getQuestion('even');
-    const questionResult = checkEvenNumber(questionString);
+    const questionArray = getEvenGameNumber();
+    const questionString = questionArray[0];
+    const questionResult = questionArray[1];
     result = gameBase(userName, questionString, questionResult);
     i += 1;
   }

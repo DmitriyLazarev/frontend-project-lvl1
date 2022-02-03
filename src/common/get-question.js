@@ -1,6 +1,13 @@
-const getRandomNumber = () => Math.floor(Math.random() * 100);
+import checkEvenNumber from './check-even-number.js';
 
-const getCalcOperation = () => {
+export const getRandomNumber = (max = 100) => Math.floor(Math.random() * max);
+
+export const getEvenGameNumber = () => {
+  const result = getRandomNumber();
+  return [result, checkEvenNumber(result)];
+};
+
+export const getCalcOperation = () => {
   const operatorsList = ['+', '-', '*'];
   const customOperator = operatorsList[Math.floor(Math.random() * operatorsList.length)];
   const firstNumber = getRandomNumber();
@@ -18,7 +25,7 @@ const getCalcOperation = () => {
   return [`${firstNumber} ${customOperator} ${secondNumber}`, result];
 };
 
-const getGreatestCommonDivisor = () => {
+export const getGreatestCommonDivisor = () => {
   let firstNumber = getRandomNumber();
   let secondNumber = getRandomNumber();
   const numbers = `${firstNumber} ${secondNumber}`;
@@ -32,17 +39,21 @@ const getGreatestCommonDivisor = () => {
   return [numbers, firstNumber];
 };
 
-const getQuestion = (gameType) => {
-  let question;
-  if (gameType === 'even') {
-    question = getRandomNumber();
-  } else if (gameType === 'calc') {
-    question = getCalcOperation();
-  } else if (gameType === 'gcd') {
-    question = getGreatestCommonDivisor();
+export const getProgression = () => {
+  const firstNumber = getRandomNumber();
+  const step = getRandomNumber();
+  const progressionArray = [firstNumber];
+  let nextNumber = firstNumber;
+  for (let i = 0; i < 9; i += 1) {
+    nextNumber += step;
+    progressionArray.push(nextNumber);
   }
+  const randomValue = getRandomNumber(10);
 
-  return question;
+  const result = progressionArray[randomValue];
+  progressionArray[randomValue] = '..';
+
+  return [progressionArray.join(' '), result];
 };
 
-export default getQuestion;
+export default getRandomNumber;
