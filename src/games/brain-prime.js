@@ -1,25 +1,8 @@
-import gameBase from '../common/game-base.js';
-import greetingAndIntroduction from '../cli.js';
-import congratulationMessage from '../common/congratulation-message.js';
-import { getPrimeNumber } from '../common/get-question.js';
+import { gameCommon } from '../common/game-base.js';
 
 const brainPrimeGame = () => {
-  const userName = greetingAndIntroduction();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-
-  let result = true;
-  let i = 0;
-  while (result && i < 3) {
-    const questionArray = getPrimeNumber();
-    const questionString = questionArray[0];
-    const questionResult = questionArray[1];
-    result = gameBase(userName, questionString, questionResult);
-    i += 1;
-  }
-
-  if (result) {
-    congratulationMessage(userName);
-  }
+  const ruleMessage = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  gameCommon(ruleMessage, 'prime');
 };
 
 export default brainPrimeGame;
