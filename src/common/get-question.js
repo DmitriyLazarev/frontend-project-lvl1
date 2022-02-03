@@ -18,12 +18,28 @@ const getCalcOperation = () => {
   return [`${firstNumber} ${customOperator} ${secondNumber}`, result];
 };
 
+const getGreatestCommonDivisor = () => {
+  let firstNumber = getRandomNumber();
+  let secondNumber = getRandomNumber();
+  const numbers = `${firstNumber} ${secondNumber}`;
+  while (firstNumber !== secondNumber) {
+    if (firstNumber > secondNumber) {
+      firstNumber -= secondNumber;
+    } else {
+      secondNumber -= firstNumber;
+    }
+  }
+  return [numbers, firstNumber];
+};
+
 const getQuestion = (gameType) => {
   let question;
   if (gameType === 'even') {
     question = getRandomNumber();
   } else if (gameType === 'calc') {
     question = getCalcOperation();
+  } else if (gameType === 'gcd') {
+    question = getGreatestCommonDivisor();
   }
 
   return question;
