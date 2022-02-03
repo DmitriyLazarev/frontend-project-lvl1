@@ -5,7 +5,7 @@ import getQuestion from '../common/get-question.js';
 
 const brainCalcGame = () => {
   const userName = greetingAndIntroduction();
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  console.log('What is the result of the expression?');
 
   let result = true;
   let i = 0;

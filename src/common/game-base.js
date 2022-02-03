@@ -6,7 +6,8 @@ const gameBase = (userName, questionString, questionResult) => {
   let result = true;
   console.log(`Question: ${questionString}`);
   const userAnswer = readlineSync.question('Your answer: ');
-  if (questionResult === userAnswer) {
+  // questionResult.toString because userAnswer has different type in each game
+  if (questionResult.toString() === userAnswer) {
     rightAnswerMessage();
   } else {
     wrongAnswerMessage(questionResult, userAnswer, userName);
