@@ -3,6 +3,18 @@
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 ![example workflow](https://github.com/DmitriyLazarev/frontend-project-lvl1/actions/workflows/analyse.yml/badge.svg)
 
+Brain Games Hexlet Projet #1 by Dmitriy Lazarev
+
+How to run:
+- npm ci
+- npm link
+- select game:
+  - brain-even
+  - brain-calc
+  - brain-gcd
+  - brain-progression
+  - brain-prime
+
 Gameplay:
 
 Brain Even: https://asciinema.org/a/fiNnPID8BvDfBv31d9SGqHEkI
