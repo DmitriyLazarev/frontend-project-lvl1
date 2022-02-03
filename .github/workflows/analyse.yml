@@ -2,7 +2,9 @@ name: analyse
 on: [push]
 jobs:
   analyse:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
-      - run: echo "Start ESLint"
-      - run: make lint
+      - name: checkout repo
+        uses: actions/checkout@v2
+      - name: ESLint check
+        run: make lint
