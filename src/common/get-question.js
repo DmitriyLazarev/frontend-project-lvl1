@@ -56,4 +56,24 @@ export const getProgression = () => {
   return [progressionArray.join(' '), result];
 };
 
+export const getPrimeNumber = () => {
+  const number = getRandomNumber();
+  let result = 'yes';
+
+  if (number === 2 && number === 1) {
+    return [number, result];
+  }
+
+  let i = 2;
+  const limit = Math.sqrt(number);
+  while (i <= limit) {
+    if (number % i === 0) {
+      result = 'no';
+    }
+    i += 1;
+  }
+
+  return [number, result];
+};
+
 export default getRandomNumber;
