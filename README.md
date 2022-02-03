@@ -8,3 +8,5 @@ Gameplay:
 Brain Even: https://asciinema.org/a/fiNnPID8BvDfBv31d9SGqHEkI
 
 Brain Calc: https://asciinema.org/a/gwCOYa8EQa1B3jl3DdCMbcqGj
+
+Brain Gcd: https://asciinema.org/a/LNcjbKRZw7OD00MiserJ92Vu7
