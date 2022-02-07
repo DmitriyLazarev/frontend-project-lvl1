@@ -3,7 +3,7 @@ import { getRandomNumber } from '../../common/modules/get-random-number.js';
 
 const getCalcGameQuestionAndAnswer = () => {
   const operatorsList = ['+', '-', '*'];
-  const customOperator = getRandomNumber(operatorsList.length);
+  const customOperator = operatorsList[getRandomNumber(operatorsList.length)];
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
   const question = `${firstNumber} ${customOperator} ${secondNumber}`;
