@@ -1,9 +1,17 @@
 import { gameCommon } from '../../common/modules/game-base.js';
-import getEvenGameNumber from './modules/get-even-game-number.js';
+import { getRandomNumber } from '../../common/modules/get-random-number.js';
+
+const isEven = (number) => number % 2 === 0;
+
+const getEvenGameQuestionAndAnswer = () => {
+  const question = getRandomNumber();
+  const expectedAnswer = isEven(question) ? 'yes' : 'no';
+  return [question, expectedAnswer];
+};
 
 const brainEvenGame = () => {
   const ruleMessage = 'Answer "yes" if the number is even, otherwise answer "no".';
-  gameCommon(ruleMessage, getEvenGameNumber);
+  gameCommon(ruleMessage, getEvenGameQuestionAndAnswer);
 };
 
 export default brainEvenGame;
