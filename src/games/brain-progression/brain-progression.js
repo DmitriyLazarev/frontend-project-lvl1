@@ -1,22 +1,27 @@
 import { gameCommon } from '../../common/modules/game-base.js';
 import { getRandomNumber } from '../../common/modules/get-random-number.js';
 
-const getProgressionGameQuestionAndAnswer = () => {
+const getProgression = (progressionLength = 10) => {
   const firstNumber = getRandomNumber();
   const step = getRandomNumber();
-  const progressionArray = [firstNumber];
+  const result = [firstNumber];
 
   let nextNumber = firstNumber;
-  for (let i = 0; i < 9; i += 1) {
+  for (let i = 0; i < progressionLength - 1; i += 1) {
     nextNumber += step;
-    progressionArray.push(nextNumber);
+    result.push(nextNumber);
   }
 
-  const randomProgressionNumber = getRandomNumber(10);
-  const expectedAnswer = progressionArray[randomProgressionNumber];
-  progressionArray[randomProgressionNumber] = '..';
+  return result;
+};
 
-  const question = progressionArray.join(' ');
+const getProgressionGameQuestionAndAnswer = () => {
+  const randomProgressionNumber = getRandomNumber(10);
+  const progression = getProgression();
+
+  const expectedAnswer = progression[randomProgressionNumber];
+  progression[randomProgressionNumber] = '..';
+  const question = progression.join(' ');
 
   return [question, expectedAnswer];
 };

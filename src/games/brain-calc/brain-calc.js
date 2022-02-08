@@ -1,21 +1,27 @@
 import { gameCommon } from '../../common/modules/game-base.js';
 import { getRandomNumber } from '../../common/modules/get-random-number.js';
 
-const getCalcGameQuestionAndAnswer = () => {
+const getRandomCalculationOperatorAndAnswer = (number1, number2) => {
   const operatorsList = ['+', '-', '*'];
   const customOperator = operatorsList[getRandomNumber(operatorsList.length)];
-  const firstNumber = getRandomNumber();
-  const secondNumber = getRandomNumber();
-  const question = `${firstNumber} ${customOperator} ${secondNumber}`;
 
   let expectedAnswer;
   if (customOperator === '+') {
-    expectedAnswer = firstNumber + secondNumber;
+    expectedAnswer = number1 + number2;
   } else if (customOperator === '-') {
-    expectedAnswer = firstNumber - secondNumber;
+    expectedAnswer = number1 - number2;
   } else {
-    expectedAnswer = firstNumber * secondNumber;
+    expectedAnswer = number1 * number2;
   }
+
+  return [customOperator, expectedAnswer];
+};
+
+const getCalcGameQuestionAndAnswer = () => {
+  const firstNumber = getRandomNumber();
+  const secondNumber = getRandomNumber();
+  const [customOperator, expectedAnswer] = getRandomCalculationOperatorAndAnswer(firstNumber, secondNumber);
+  const question = `${firstNumber} ${customOperator} ${secondNumber}`;
 
   return [question, expectedAnswer];
 };
