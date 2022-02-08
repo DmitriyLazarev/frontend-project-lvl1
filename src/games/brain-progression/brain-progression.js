@@ -16,8 +16,9 @@ const getProgression = (progressionLength = 10) => {
 };
 
 const getProgressionGameQuestionAndAnswer = () => {
-  const randomProgressionNumber = getRandomNumber(10);
-  const progression = getProgression();
+  const progressionLength = 10;
+  const randomProgressionNumber = getRandomNumber(progressionLength);
+  const progression = getProgression(progressionLength);
 
   const expectedAnswer = progression[randomProgressionNumber];
   progression[randomProgressionNumber] = '..';
