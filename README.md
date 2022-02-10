@@ -1,6 +1,6 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/DmitriyLazarev/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/DmitriyLazarev/frontend-project-lvl1/actions)
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+<a href="https://codeclimate.com/github/DmitriyLazarev/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/e2f533ea6b2c226755d7/maintainability" /></a>
 ![example workflow](https://github.com/DmitriyLazarev/frontend-project-lvl1/actions/workflows/analyse.yml/badge.svg)
 
 Brain Games Hexlet Projet #1 by Dmitriy Lazarev
