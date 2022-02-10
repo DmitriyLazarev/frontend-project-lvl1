@@ -1,5 +1,5 @@
 import { gameCommon } from '../game-base.js';
-import { getRandomNumber } from '../get-random-number.js';
+import { checkRandomNumberByCondition } from '../check-random-number.js';
 
 const isPrime = (num) => {
   if (num < 2) {
@@ -15,11 +15,7 @@ const isPrime = (num) => {
   return true;
 };
 
-const getPrimeNumberGameQuestionAndAnswer = () => {
-  const question = getRandomNumber();
-  const expectedAnswer = isPrime(question) ? 'yes' : 'no';
-  return [question, expectedAnswer];
-};
+const getPrimeNumberGameQuestionAndAnswer = () => checkRandomNumberByCondition(isPrime);
 
 const brainPrimeGame = () => {
   const ruleMessage = 'Answer "yes" if given number is prime. Otherwise answer "no".';
