@@ -1,5 +1,5 @@
-import { gameCommon } from '../../common/modules/game-base.js';
-import { getRandomNumber } from '../../common/modules/get-random-number.js';
+import { gameCommon } from '../game-base.js';
+import { getRandomNumber } from '../get-random-number.js';
 
 const findGcd = (number1, number2) => {
   let firstNumber = number1;
@@ -19,7 +19,7 @@ const getGcdGameQuestionAndAnswer = () => {
   const secondNumber = getRandomNumber();
 
   const question = `${firstNumber} ${secondNumber}`;
-  const expectedAnswer = findGcd(firstNumber, secondNumber);
+  const expectedAnswer = String(findGcd(firstNumber, secondNumber));
 
   return [question, expectedAnswer];
 };

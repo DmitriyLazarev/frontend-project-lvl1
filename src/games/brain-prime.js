@@ -1,5 +1,5 @@
-import { gameCommon } from '../../common/modules/game-base.js';
-import { getRandomNumber } from '../../common/modules/get-random-number.js';
+import { gameCommon } from '../game-base.js';
+import { getRandomNumber } from '../get-random-number.js';
 
 const isPrime = (num) => {
   if (num < 2) {

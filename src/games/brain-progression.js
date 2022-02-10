@@ -1,5 +1,5 @@
-import { gameCommon } from '../../common/modules/game-base.js';
-import { getRandomNumber } from '../../common/modules/get-random-number.js';
+import { gameCommon } from '../game-base.js';
+import { getRandomNumber } from '../get-random-number.js';
 
 const getProgression = (progressionLength = 10) => {
   const firstNumber = getRandomNumber();
@@ -20,7 +20,7 @@ const getProgressionGameQuestionAndAnswer = () => {
   const randomProgressionNumber = getRandomNumber(progressionLength);
   const progression = getProgression(progressionLength);
 
-  const expectedAnswer = progression[randomProgressionNumber];
+  const expectedAnswer = String(progression[randomProgressionNumber]);
   progression[randomProgressionNumber] = '..';
   const question = progression.join(' ');
 

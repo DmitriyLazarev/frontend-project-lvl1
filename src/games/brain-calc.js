@@ -1,5 +1,5 @@
-import { gameCommon } from '../../common/modules/game-base.js';
-import { getRandomNumber } from '../../common/modules/get-random-number.js';
+import { gameCommon } from '../game-base.js';
+import { getRandomNumber } from '../get-random-number.js';
 
 const getRandomOperator = () => {
   const operatorsList = ['+', '-', '*'];
@@ -23,7 +23,7 @@ const getCalcGameQuestionAndAnswer = () => {
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
   const operator = getRandomOperator();
-  const expectedAnswer = getCalculation(firstNumber, secondNumber, operator);
+  const expectedAnswer = String(getCalculation(firstNumber, secondNumber, operator));
   const question = `${firstNumber} ${operator} ${secondNumber}`;
 
   return [question, expectedAnswer];
